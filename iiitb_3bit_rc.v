@@ -1,4 +1,4 @@
-module ring_counter(
+module iiitb_3bit_rc(
     Clock,
     Reset,
     Count_out
