@@ -7,4 +7,4 @@ $ cd iiitb_3bit_rc/<br/>
 $ iverilog iiitb_3bit_rc.v iiitb_3bit_rc_tb.v<br/>
 $ ./a.out <br/>
 $ gtkwave iiitb_3bit_rr_out.vcd<br/>
-<\mark>
+</mark>
