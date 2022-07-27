@@ -10,7 +10,22 @@ The above figure is the block diagram of a 3bit ring counter. The figure shows t
 ## WORKING <br/>
 The counter is set to an initial state of *_'100'_* by the ORI signal. In the next positive edge of the clock, the values of the flip flops are shifted right and the output of last flip flop is sent to the first one. So, the next state becomes *_'010'_*. Similary after next positive edge of clock, the state of the counter becomes *_'001'_*. This continues until the ORI is again high which will set the counter back to *_'110'_*.<br/>
 ## WAVEFORM <br/>
-![waveform](https://user-images.githubusercontent.com/64605104/181284296-45bc6af9-b878-4329-9148-ba5a58b42700.png)
+![waveform](https://user-images.githubusercontent.com/64605104/181284296-45bc6af9-b878-4329-9148-ba5a58b42700.png) <br/>
+In the above waveform, ORI signal sets the counter to '100' and then the counter runs in a loop with three states until ORI is high again.
+## TOOLS USED <br/>
+**IVERILOG**<br/>
+Icarus Verilog is a Verilog simulation and synthesis tool.<br/>
+To install iverilog, type the following command in the terminal:<br/>
+```
+$ sudo apt install iverilog 
+```
+**GTKWAVE**<br/>
+GTKWave is a VCD waveform viewer based on the GTK library. This viewer support VCD and LXT formats for signal dumps.
+```
+$ sudo apt install gtkwave 
+```
+<br/>
+
 
 
 
