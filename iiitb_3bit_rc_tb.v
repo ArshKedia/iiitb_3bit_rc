@@ -1,4 +1,4 @@
-module tb_ring;
+module iiitb_3bit_rc_tb;
 
     // Inputs
     reg Clock;
@@ -8,7 +8,7 @@ module tb_ring;
     wire [2:0] Count_out;
 
     // Instantiate the Unit Under Test (UUT)
-    ring_counter uut (
+    iiitb_3bit_rc uut (
         .Clock(Clock),
         .Reset(Reset),
         .Count_out(Count_out)
@@ -23,8 +23,8 @@ module tb_ring;
     //Simulation inputs.
     initial begin
     //Apply Reset for 50 ns.
-        $dumpfile("tb_ring_out.vcd");
-        $dumpvars(0,tb_ring);
+        $dumpfile("iiitb_3bit_rr_out.vcd");
+        $dumpvars(0,iiitb_3bit_rc_tb);
         Reset = 1; //Reset is high
         #50;       //Wait for 50 ns
         Reset = 0; //Reset is low.
