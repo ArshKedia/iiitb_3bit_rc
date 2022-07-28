@@ -37,6 +37,16 @@ $ iverilog iiitb_3bit_rc.v iiitb_3bit_rc_tb.v<br/>
 $ ./a.out <br/>
 $ gtkwave iiitb_3bit_rr_out.vcd<br/>
 ```
-
-
-
+## ACKNOWLEDGMENTS <br/>
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. <br/>
+## CONTRIBUTORS <br/>
+- Arsh Kedia, Mtech IIIT Bangalore <br/>
+- Kunal Ghosh Director, VSD Corp.Pvt.Ltd. <br/>
+- Lokesh Maji <br/>
+- Siddhant Nayak <br/>
+- Rohit Raj <br/>
+- Nishit Chechani <br/>
+## CONTACT <br/>
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com <br/>
+- Arsh Kedia, Mtech IIIT Bangalore. arshkedia99@gmail.com
+- Rohit Raj, Mtech IIIT Bangalore rohitraj116@gmail.com
