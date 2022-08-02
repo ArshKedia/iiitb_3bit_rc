@@ -12,3 +12,4 @@ clean
 flatten
 # write synthesized design
 write_verilog -noattr iiitb_3bit_rc_synth.v
+stat
