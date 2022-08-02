@@ -11,4 +11,4 @@ abc -liberty /home/arsh/IIITB/asic/iiitb_3bit_rc/lib/sky130_fd_sc_hd__tt_025C_1v
 clean
 flatten
 # write synthesized design
-write_verilog iiitb_3bit_rc_synth.v
+write_verilog -noattr iiitb_3bit_rc_synth.v
