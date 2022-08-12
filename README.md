@@ -98,18 +98,14 @@ $ iverilog iiitb_3bit_rc.v iiitb_3bit_rc_tb.v
 $ ./a.out 
 $ gtkwave iiitb_3bit_rr_out.vcd
 ```
-***For synthesis, type the following in the same directory in terminal***<br/>
+***For synthesis, run "yosys_run.sh" file in the same directory in terminal.***<br/>
 ```
-$ yosys
-yosys> read_liberty -lib ../iiitb_3bit_rc/lib/sky130_fd_sc_hd_tt_025c_1v80.lib
-yosys> read_verilog iiitb_3bit_rc.v
-yosys> synth -top iiitb_3bit_rc
-yosys> write_verilog -noattr iiitb_3bit_rc_net.v
+$ yosys -s yosys_run.sh
 ```
 The above commands create the netlist of iverilog code.<br/><br/>
 ***For Gate level syntheses(GLS), type the following in the same directory in terminal***<br/>
 ```
-$ iverilog ../iiitb_3bit_rc/verilog_model/primitives.v ../iiitb_3bit_rc/verilog_model/sky130_fd_sc_hd.v iiitb_3bit_rc_net.v iiitb_3bit_rc_tb.v
+$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 ../iiitb_3bit_rc/verilog_model/primitives.v ../iiitb_3bit_rc/verilog_model/sky130_fd_sc_hd.v iiitb_3bit_rc_net.v iiitb_3bit_rc_tb.v
 ```
 ***To generate the simulation, type the following in the same directory in terminal***<br/>
 ```
