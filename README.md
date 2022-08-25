@@ -134,6 +134,75 @@ The above picture shows the netlist of this project after synthesis.<br/>
 
 
 
+## Open Lane <br/>
+OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
+
+To read more about Open Lane visit: https://github.com/The-OpenROAD-Project/OpenLane <br/>
+### To install Open Lane, follow the below instructions in the home directory: <br/>
+```
+$   apt install -y build-essential python3 python3-venv python3-pip
+$   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+$   cd OpenLane/
+$   sudo make
+$   sudo make test
+```
+
+
+
+## Magic <br/>
+Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
+
+### To build the pre-requisites, type the following commands: <br/>
+```
+$   sudo apt-get install m4
+$   sudo apt-get install tcsh
+$   sudo apt-get install csh
+$   sudo apt-get install libx11-dev
+$   sudo apt-get install tcl-dev tk-dev
+$   sudo apt-get install libcairo2-dev
+$   sudo apt-get install mesa-common-dev libglu1-mesa-dev
+$   sudo apt-get install libncurses-dev
+```
+### To install magic:
+```
+$   git clone https://github.com/RTimothyEdwards/magic
+$   cd magic/
+$   ./configure
+$   sudo make
+$   sudo make install
+```
+
+## The Final Layout: <br/>
+After GLS, the final layout is obtained using OpenLane using the following commands:<br/>
+```
+$   cd OpenLane/
+$   cd designs/
+$   mkdir iiitb_3bit_rc
+$   cd iiitb_3bit_rc/
+```
+Then copy the config.json file in the current directory and type the following commands: <br/>
+```
+$   mkdir src
+$   cd src/
+```
+Copy the iiitb_3bit_rc.v file in the current directory and type the following commands:<br/>
+```
+$   cd ../../../
+$   sudo make mount
+$   ./flow.tcl -design iiitb_3bit_rc
+```
+We now use Magic tool to view the layout that we made using openlane. To view the layout type the following commmands in the home directory.<br/>
+```
+$   cd /home/arsh/OpenLane/designs/iiitb_3bit_rc/runs/RUN_2022.08.21_09.15.00/results/final/def
+$   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../../tmp/merged.max.lef def read iiitb_3bit_rc.def
+```
+![final_layout](https://user-images.githubusercontent.com/64605104/186626568-7b043f65-7c40-4f2e-a7bc-28fef3b7f7b4.png)
+
+
+
+
+
+
 ## ACKNOWLEDGMENTS <br/>
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. <br/>
 ## CONTRIBUTORS <br/>
