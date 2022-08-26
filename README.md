@@ -196,7 +196,8 @@ We now use Magic tool to view the layout that we made using openlane. To view th
 $   cd /home/arsh/OpenLane/designs/iiitb_3bit_rc/runs/RUN_2022.08.21_09.15.00/results/final/def
 $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../../tmp/merged.max.lef def read iiitb_3bit_rc.def
 ```
-![final_layout](https://user-images.githubusercontent.com/64605104/186626568-7b043f65-7c40-4f2e-a7bc-28fef3b7f7b4.png)
+
+![final_layout](https://user-images.githubusercontent.com/64605104/186645198-0182bb42-4265-4cd4-865a-ccd432252f3f.png)
 
 
 
