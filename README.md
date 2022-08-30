@@ -210,16 +210,78 @@ $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef r
 
 
 ## Placing sky130_vsdinv <br/>
-To include the inverter cell in the synthesis, copy the sky130_vsdinv.lef file to the designs/iiitb_3bit_rc/src directory
-Since abc maps the standard cell to a library abc there must be a library that defines the CMOS inverter. The sky130_fd_sc_hd_typical.lib sky130_fd_sc_hd_fast.lib and sky130_fd_sc_hd_slow.lib file needs to be copied to the designs/iiitb_3bit_rc/src directory.<br/>
-The config.json file aslo needs to be changed accordingly.<br/>
+### Building the sky130 standard cell<br/>
+The Magic layout of a CMOS inverter will be used so as to intergate the inverter with the counter design. To do this, inverter magic file is sourced from vsdstdcelldesign by cloning it.
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+```
+To invoke magic to view the sky130_inv.mag file, the sky130A.tech file must be included in the command along with its path. To ease up the complexity of this command, the tech file can be copied from the magic folder to the vsdstdcelldesign folder.
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+Next, we need to define the ports. <br/>
+In Magic Layout window click on Edit >> Text which opens up a dialogue box. Edit according to the following screenshots.<br/>
 
-![config](https://user-images.githubusercontent.com/64605104/187416648-532088f4-a3e8-4fb6-8095-fd7e8c17f679.png)
+![pic1](https://user-images.githubusercontent.com/64605104/187448054-3c8af4c2-b796-46e4-9048-fb7151a7fa8e.png)
 <br/>
 
-![vsdinv](https://user-images.githubusercontent.com/64605104/187411295-d33944c9-dd29-4408-89a1-f96a898dc7ab.png)
+![pic2](https://user-images.githubusercontent.com/64605104/187448285-941c0ea0-a878-4ab8-b23c-1c030493ad59.png)
+<br/>
 
+![pic3](https://user-images.githubusercontent.com/64605104/187448324-17496c5e-47ff-40e2-9c27-76b0e216889f.png)
+<br/>
 
+![pic4](https://user-images.githubusercontent.com/64605104/187448359-a3a007ed-dda6-4137-9a59-0e6a5bd5387b.png)
+<br/>
+<br/>
+***LEF FILE GENERATION*** <br/><br/>
+Select port A in magic:<br/>
+```
+port class input
+port use signal
+```
+Select Y area<br/>
+```
+port class output
+port class signal
+```
+Select VPWR area<br/>
+```
+port class inout
+port use power
+```
+Select VGND area<br/>
+```
+port class inout
+port use ground
+```
+Then type the following command to generate the lef file.<br/>
+```
+lef write
+```
+<br/>
+In order to include the new standard cell in the synthesis, copy the sky130_vsdinv.lef file to the designs/iiitb_3bit_rc/src directory.<br/>
+Since abc maps the standard cell to a library abc there must be a library that defines the CMOS inverter. The sky130_fd_sc_hd_typical.lib file, sky130_fd_sc_hd_slow.lib file and sky130_fd_sc_hd_fast.lib from vsdstdcelldesign/libs directory needs to be copied to the designs/iiitb_3bit_rc/src directory.<br/>
+The config.json file also needs to be updated as following: <br/><br/>
+
+![config](https://user-images.githubusercontent.com/64605104/187450331-8ce2d6e3-7b4b-4a3d-829a-0c6b9b2e0a3d.png)
+<br/>
+<br/>
+In order to integrate the standard cell in the OpenLANE flow, invoke openLANE as usual and carry out following steps:<br/>
+```
+prep -design iiitb_3bit_rc
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+run_floorplan
+run_placement
+```
+<br/>
+To check the layout invoke magic from the results/placement directory:<br/>
+```
+magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_3bit_rc.def &
+```
+<br/>
 
 
 ## REFERENCES <br/>
