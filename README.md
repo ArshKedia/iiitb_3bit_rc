@@ -282,6 +282,17 @@ To check the layout invoke magic from the results/placement directory:<br/>
 magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_3bit_rc.def &
 ```
 <br/>
+To check if the sky130_vsdinv cell is present or not, type the following in magic.
+```
+getcell sky130_vsdinv
+'''
+![getcell](https://user-images.githubusercontent.com/64605104/187453381-8ec05a4f-2c56-4a31-b05c-28f0ed9fa19b.png)
+<br/>
+The above picture shows that the cell was placed successfully.
+<br/>
+
+![vsdinv](https://user-images.githubusercontent.com/64605104/187453772-8fc8b791-635b-4c3b-b008-46aa96867d66.png)
+<br/>
 
 
 ## REFERENCES <br/>
