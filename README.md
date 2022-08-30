@@ -69,6 +69,43 @@ $ make
 $ sudo make install
 $ make test
 ```
+## Open Lane <br/>
+OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
+
+To read more about Open Lane visit: https://github.com/The-OpenROAD-Project/OpenLane <br/>
+### To install Open Lane, follow the below instructions in the home directory: <br/>
+```
+$   apt install -y build-essential python3 python3-venv python3-pip
+$   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+$   cd OpenLane/
+$   sudo make
+$   sudo make test
+```
+
+
+
+## Magic <br/>
+Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
+
+### To build the pre-requisites, type the following commands: <br/>
+```
+$   sudo apt-get install m4
+$   sudo apt-get install tcsh
+$   sudo apt-get install csh
+$   sudo apt-get install libx11-dev
+$   sudo apt-get install tcl-dev tk-dev
+$   sudo apt-get install libcairo2-dev
+$   sudo apt-get install mesa-common-dev libglu1-mesa-dev
+$   sudo apt-get install libncurses-dev
+```
+### To install magic:
+```
+$   git clone https://github.com/RTimothyEdwards/magic
+$   cd magic/
+$   ./configure
+$   sudo make
+$   sudo make install
+```
 
 
 
@@ -134,45 +171,15 @@ The above picture shows the netlist of this project after synthesis.<br/>
 
 
 
-## Open Lane <br/>
-OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
-
-To read more about Open Lane visit: https://github.com/The-OpenROAD-Project/OpenLane <br/>
-### To install Open Lane, follow the below instructions in the home directory: <br/>
-```
-$   apt install -y build-essential python3 python3-venv python3-pip
-$   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
-$   cd OpenLane/
-$   sudo make
-$   sudo make test
-```
 
 
 
-## Magic <br/>
-Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
+## PHYSICAL DESIGN: <br/>
+Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t power, performance and area.
 
-### To build the pre-requisites, type the following commands: <br/>
-```
-$   sudo apt-get install m4
-$   sudo apt-get install tcsh
-$   sudo apt-get install csh
-$   sudo apt-get install libx11-dev
-$   sudo apt-get install tcl-dev tk-dev
-$   sudo apt-get install libcairo2-dev
-$   sudo apt-get install mesa-common-dev libglu1-mesa-dev
-$   sudo apt-get install libncurses-dev
-```
-### To install magic:
-```
-$   git clone https://github.com/RTimothyEdwards/magic
-$   cd magic/
-$   ./configure
-$   sudo make
-$   sudo make install
-```
-
-## The Final Layout: <br/>
+Simplified RTL to GDSII Flow: <br/>
+![rtl_to_gdsII](https://user-images.githubusercontent.com/64605104/187434099-6ddba15c-1320-4308-93b4-7e659ba22406.jpeg)
+<br/>
 After GLS, the final layout is obtained using OpenLane using the following commands:<br/>
 ```
 $   cd OpenLane/
@@ -203,23 +210,32 @@ $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef r
 
 
 ## Placing sky130_vsdinv <br/>
+To include the inverter cell in the synthesis, copy the sky130_vsdinv.lef file to the designs/iiitb_3bit_rc/src directory
+Since abc maps the standard cell to a library abc there must be a library that defines the CMOS inverter. The sky130_fd_sc_hd_typical.lib sky130_fd_sc_hd_fast.lib and sky130_fd_sc_hd_slow.lib file needs to be copied to the designs/iiitb_3bit_rc/src directory.<br/>
+The config.json file aslo needs to be changed accordingly.<br/>
 
+![config](https://user-images.githubusercontent.com/64605104/187416648-532088f4-a3e8-4fb6-8095-fd7e8c17f679.png)
+<br/>
 
 ![vsdinv](https://user-images.githubusercontent.com/64605104/187411295-d33944c9-dd29-4408-89a1-f96a898dc7ab.png)
 
 
 
 
-
+## REFERENCES <br/>
+- https://github.com/RTimothyEdwards/magic <br/>
+- https://github.com/The-OpenROAD-Project/OpenLane <br/>
+- https://www.vsdiat.com/dashboard <br/>
 ## ACKNOWLEDGMENTS <br/>
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. <br/>
+- Nickson Jose, VLSI Engineer, VSD Corp. Pvt. Ltd. <br/>
+- Madhav Rao, Professor, IIIT-Bangalore.<br/>
 ## CONTRIBUTORS <br/>
 - Arsh Kedia, Mtech IIIT Bangalore <br/>
 - Kunal Ghosh Director, VSD Corp.Pvt.Ltd. <br/>
 - Lokesh Maji <br/>
 - Vinay Rayapati <br/>
 - Rohit Raj <br/>
-- Nishit Chechani <br/>
 ## CONTACT <br/>
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com <br/>
 - Arsh Kedia, Mtech IIIT Bangalore. arshkedia99@gmail.com
