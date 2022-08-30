@@ -286,9 +286,10 @@ $ magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef rea
 
 To check if the sky130_vsdinv cell is present or not, type the following in magic. <br/>
 ```
-getcell sky130_vsdinv
+$ getcell sky130_vsdinv
 ```
 <br/>
+
 ![getcell](https://user-images.githubusercontent.com/64605104/187455933-561a130e-2ad1-4322-a0fc-2b47e8542c63.png)
 
 
