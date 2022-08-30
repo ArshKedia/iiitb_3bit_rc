@@ -276,19 +276,24 @@ run_synthesis
 run_floorplan
 run_placement
 ```
-<br/>
-To check the layout invoke magic from the results/placement directory: <br/>
+To see the layout,invoke magic from the results/placement directory using the following command. <br/>
 ```
-magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_3bit_rc.def &
+$ magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_3bit_rc.def &
+
 ```
+
 <br/>
+
 To check if the sky130_vsdinv cell is present or not, type the following in magic. <br/>
 ```
 getcell sky130_vsdinv
 ```
 <br/>
-![getcell](https://user-images.githubusercontent.com/64605104/187453381-8ec05a4f-2c56-4a31-b05c-28f0ed9fa19b.png)
+![getcell](https://user-images.githubusercontent.com/64605104/187455933-561a130e-2ad1-4322-a0fc-2b47e8542c63.png)
+
+
 <br/>
+
 The above picture shows that the cell was placed successfully.
 <br/>
 
