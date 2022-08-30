@@ -201,6 +201,12 @@ $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef r
 
 
 
+## Placing sky130_vsdinv <br/>
+
+
+![vsdinv](https://user-images.githubusercontent.com/64605104/187411295-d33944c9-dd29-4408-89a1-f96a898dc7ab.png)
+
+
 
 
 
