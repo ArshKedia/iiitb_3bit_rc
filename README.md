@@ -154,7 +154,7 @@ $ gtkwave iiitb_3bit_rr.vcd
 
 
 
-## NETLIST <br/>
+***NETLIST*** <br/>
 In electronic design, a netlist is a description of the connectivity of an electronic circuit.In its simplest form, a netlist consists of a list of the electronic components in a circuit and a list of the nodes they are connected to. A network (net) is a collection of two or more interconnected components.<br/>
 
 
