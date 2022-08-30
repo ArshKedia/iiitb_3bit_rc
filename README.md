@@ -216,7 +216,7 @@ $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef r
 - Arsh Kedia, Mtech IIIT Bangalore <br/>
 - Kunal Ghosh Director, VSD Corp.Pvt.Ltd. <br/>
 - Lokesh Maji <br/>
-- Siddhant Nayak <br/>
+- Vinay Rayapati <br/>
 - Rohit Raj <br/>
 - Nishit Chechani <br/>
 ## CONTACT <br/>
