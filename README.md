@@ -69,11 +69,11 @@ $ make
 $ sudo make install
 $ make test
 ```
-## Open Lane <br/>
+**Open Lane** <br/> <br/>
 OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
 
 To read more about Open Lane visit: https://github.com/The-OpenROAD-Project/OpenLane <br/>
-### To install Open Lane, follow the below instructions in the home directory: <br/>
+***To install Open Lane, follow the below instructions in the home directory:*** <br/>
 ```
 $   apt install -y build-essential python3 python3-venv python3-pip
 $   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
@@ -84,10 +84,10 @@ $   sudo make test
 
 
 
-## Magic <br/>
+**Magic** <br/><br/>
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
-### To build the pre-requisites, type the following commands: <br/>
+***To build the pre-requisites, type the following commands:*** <br/>
 ```
 $   sudo apt-get install m4
 $   sudo apt-get install tcsh
@@ -98,7 +98,7 @@ $   sudo apt-get install libcairo2-dev
 $   sudo apt-get install mesa-common-dev libglu1-mesa-dev
 $   sudo apt-get install libncurses-dev
 ```
-### To install magic:
+***To install magic***:
 ```
 $   git clone https://github.com/RTimothyEdwards/magic
 $   cd magic/
@@ -111,7 +111,7 @@ $   sudo make install
 
 
 
-## GTL- Gate Level Simulation <br/>
+## Gate Level Simulation <br/>
 GLS is generating the simulation output by running test bench with netlist file generated from synthesis as design under test. Netlist is logically same as RTL code, therefore, same test bench can be used for it.<br/>
 Below picture gives an insight of the procedure. Here while using iverilog, you also include gate level verilog models to generate GLS simulation.<br/>
 ![image](https://user-images.githubusercontent.com/64605104/183838608-b56e1d75-929d-492a-b112-8203a5e40cff.png)
