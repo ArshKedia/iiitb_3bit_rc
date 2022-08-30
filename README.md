@@ -197,7 +197,8 @@ $   cd /home/arsh/OpenLane/designs/iiitb_3bit_rc/runs/RUN_2022.08.21_09.15.00/re
 $   magic -T /home/arsh/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../../tmp/merged.max.lef def read iiitb_3bit_rc.def
 ```
 
-![final_layout](https://user-images.githubusercontent.com/64605104/186645198-0182bb42-4265-4cd4-865a-ccd432252f3f.png)
+![final_layout](https://user-images.githubusercontent.com/64605104/187413954-dd4d0edc-1b86-4706-ba43-1fa8f31bf1b2.png)
+
 
 
 
