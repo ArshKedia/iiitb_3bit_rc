@@ -305,19 +305,28 @@ The above picture shows that the cell was placed successfully.
     ![stats](https://user-images.githubusercontent.com/64605104/192581382-d7d83e6c-a9b7-4c0d-9b3e-6df03e378cfe.png)
 <br/>
 Total gate count = 6<br/>
+<br/>
+
 **2. Area** <br/>
 ![magic_area](https://user-images.githubusercontent.com/64605104/192582271-87d6d6fc-66a1-433a-ac63-da9a55204fed.png)
 <br/>
 Area = 3600 um^2 <br/>
+<br/>
+
 **3.Performance** <br/>
 ![timing1](https://user-images.githubusercontent.com/64605104/192585010-76110d5c-815c-4b46-bba0-7c92476ba41a.png)
 <br/>
+
 Performance = 1/(24-18.32) = 176.05 MHz <br/>
+<br/>
+
 **4. Flop to standard cell ratio** <br/>
 ![flip_flops](https://user-images.githubusercontent.com/64605104/192586862-002719be-aa88-4227-b7d6-50e174fb79ac.png)
 <br/>
 Flop ratio = 3/6 = 0.5 <br/>
-**5. Power ** <br/>
+<br/>
+
+**5. Power** <br/>
 
 ![power](https://user-images.githubusercontent.com/64605104/192587287-e97f6288-5d1c-434b-8c4d-0706668a13c7.png) 
 <br/>
