@@ -302,13 +302,16 @@ The above picture shows that the cell was placed successfully.
 <br/>
 ## RESULTS <br/>
 **1. Gate count** <br/>
-    ![stats](https://user-images.githubusercontent.com/64605104/192581382-d7d83e6c-a9b7-4c0d-9b3e-6df03e378cfe.png)
+![stats](https://user-images.githubusercontent.com/64605104/192591005-de9d1dab-f0a2-4750-8de8-9d665e6898ca.png)
+
+  
 <br/>
 Total gate count = 6<br/>
 <br/>
 
 **2. Area** <br/>
-![magic_area](https://user-images.githubusercontent.com/64605104/192582271-87d6d6fc-66a1-433a-ac63-da9a55204fed.png)
+![magic_area](https://user-images.githubusercontent.com/64605104/192591061-058ea45a-bd51-4bdf-b5c0-426d5b594fa4.png)
+
 <br/>
 Area = 3600 um^2 <br/>
 <br/>
@@ -321,14 +324,16 @@ Performance = 1/(24-18.32) = 176.05 MHz <br/>
 <br/>
 
 **4. Flop to standard cell ratio** <br/>
-![flip_flops](https://user-images.githubusercontent.com/64605104/192586862-002719be-aa88-4227-b7d6-50e174fb79ac.png)
+![flip_flop_ratio](https://user-images.githubusercontent.com/64605104/192591170-b844f170-88d7-4331-be2c-9a2b1e8531cb.png)
+
 <br/>
 Flop ratio = 3/6 = 0.5 <br/>
 <br/>
 
 **5. Power** <br/>
+![power](https://user-images.githubusercontent.com/64605104/192591211-09f15411-5af7-4c16-8af6-15f476d89e50.png)
 
-![power](https://user-images.githubusercontent.com/64605104/192587287-e97f6288-5d1c-434b-8c4d-0706668a13c7.png) 
+
 <br/>
 Internal Power = 26.6 uW (85.8%)<br/>
 Switching Power = 4.41 uW (14.2%)<br/>
@@ -347,14 +352,15 @@ Total Power = 132 uW (100%)<br/>
 ## ACKNOWLEDGMENTS <br/>
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. <br/>
 - Nickson Jose, VLSI Engineer, VSD Corp. Pvt. Ltd. <br/>
-- Madhav Rao, Professor, IIIT-Bangalore.<br/>
+- Madhav Rao, Professor, IIIT-Bangalore <br/>
+- Nanditha Rao, Professor, IIIT-Bangalore <br/>
 ## CONTRIBUTORS <br/>
 - Arsh Kedia, Mtech IIIT Bangalore <br/>
 - Kunal Ghosh Director, VSD Corp.Pvt.Ltd. <br/>
 - Lokesh Maji <br/>
 - Vinay Rayapati <br/>
-- Rohit Raj <br/>
 ## CONTACT <br/>
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com <br/>
-- Arsh Kedia, Mtech IIIT Bangalore. arshkedia99@gmail.com
-- Rohit Raj, Mtech IIIT Bangalore rohitraj116@gmail.com
+- Arsh Kedia, Mtech IIIT Bangalore. arshkedia99@gmail.com <br/>
+- Madhav Rao, mr@iiitb.ac.in <br/>
+- Nanditha Rao, nanditha.rao@iiitb.ac.in <br/>
