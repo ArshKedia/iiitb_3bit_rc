@@ -317,10 +317,10 @@ Area = 3600 um^2 <br/>
 <br/>
 
 **3.Performance** <br/>
-![timing1](https://user-images.githubusercontent.com/64605104/192585010-76110d5c-815c-4b46-bba0-7c92476ba41a.png)
-<br/>
 
-Performance = 1/(24-18.32) = 176.05 MHz <br/>
+![timing_final](https://user-images.githubusercontent.com/64605104/192736065-a95cebbf-7645-4036-ba9f-ac3261f0df75.png)
+
+Performance = 1/(1.7) = 0.58 GHz <br/>
 <br/>
 
 **4. Flop to standard cell ratio** <br/>
